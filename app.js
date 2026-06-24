@@ -14,7 +14,7 @@
      this browser only (handy for testing the form before you go live).
      Your Airtable token NEVER goes on the public site — only this URL.
      ============================================================ */
-  const LEAD_WEBHOOK_URL = 'https://hooks.airtable.com/workflows/v1/genericWebhook/app7ppkziMHDcai41/wflbAwo1T0VbN84KR/wtrcWp0wXsJy5aLvd';
+  const LEAD_ENDPOINT = '/api/lead';
 
   function sendLead(data, source) {
     const payload = {
@@ -29,14 +29,12 @@
       submittedAt: new Date().toISOString(),
       page:      location.href
     };
-    if (!LEAD_WEBHOOK_URL) {
-      console.info('[SmileAtlas] DEMO mode — lead captured locally (set LEAD_WEBHOOK_URL to send to Airtable):', payload);
-      return Promise.resolve();
-    }
-    return fetch(LEAD_WEBHOOK_URL, {
+    return fetch(LEAD_ENDPOINT, {
       method: 'POST',
-      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
+    }).then((r) => {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
     }).catch((err) => {
       // Never lose a lead: if the webhook is unreachable, queue it locally.
       console.warn('[SmileAtlas] Lead webhook failed — kept locally to retry:', err);
