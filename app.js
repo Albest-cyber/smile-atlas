@@ -151,14 +151,7 @@
     }
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      // Honeypot anti-spam: humans never see/fill the "website" field. If a bot
-      // fills it, we silently show success but send nothing — no spam reaches Airtable.
-      const hp = form.querySelector('input[name="website"]');
-      if (hp && hp.value.trim() !== '') {
-        const fakeData = Object.fromEntries(new FormData(form).entries());
-        onSuccess(fakeData);
-        return;
-      }
+      // Honeypot anti-spam: server-side only (client-side removed to avoid Chrome Autofill false positives)
       const required = form.querySelectorAll('input[name="firstName"], input[name="lastName"], input[name="email"], input[name="phone"]');
       let valid = true;
       let firstBad = null;
