@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smile Atlas — Next-generation dentistry in Istanbul</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ============ ANIMATED BACKGROUND ============ -->
+<div class="bg-fx" aria-hidden="true">
+  <div class="bg-aurora"><span class="a1"></span><span class="a2"></span><span class="a3"></span></div>
+  <div class="bg-grid"></div>
+  <div class="bg-noise"></div>
+</div>
+
+<!-- ============ HEADER ============ -->
+<header class="site-head" id="siteHead">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Smile Atlas home">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 21c-1.2-3.5-3.5-5-5.5-5C4 16 3 14 3 11.5 3 8 5.2 6 8 6c1.6 0 3 .8 4 2 1-1.2 2.4-2 4-2 2.8 0 5 2 5 5.5 0 2.5-1 4.5-3.5 4.5-2 0-4.3 1.5-5.5 5z" fill="currentColor"/></svg>
+      </span>
+      <span>Smile<b>Atlas</b><span class="accent-dot">.</span></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#how">How it works</a>
+      <a href="#treatments">Treatments</a>
+      <a href="#clinics">Clinics</a>
+      <a href="#prices">Prices</a>
+      <a href="#reviews">Reviews</a>
+    </nav>
+    <span class="nav-spacer"></span>
+    <div class="nav-cta">
+      <span class="nav-phone">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 005 5L14 13l5 2v3a2 2 0 01-2 2A15 15 0 013 6a2 2 0 012-2z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+        +44 20 4538 2200
+      </span>
+      <button class="btn btn-primary" data-open-modal data-clinic="">Free consultation</button>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- mobile drawer -->
+<div class="mobile-drawer" id="mobileDrawer">
+  <div class="md-top">
+    <span class="brand"><span class="mark"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21c-1.2-3.5-3.5-5-5.5-5C4 16 3 14 3 11.5 3 8 5.2 6 8 6c1.6 0 3 .8 4 2 1-1.2 2.4-2 4-2 2.8 0 5 2 5 5.5 0 2.5-1 4.5-3.5 4.5-2 0-4.3 1.5-5.5 5z" fill="currentColor"/></svg></span>Smile<b>Atlas</b></span>
+    <button class="modal-close" id="drawerClose" aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+  </div>
+  <a href="#how" data-close-drawer>How it works</a>
+  <a href="#treatments" data-close-drawer>Treatments</a>
+  <a href="#clinics" data-close-drawer>Clinics</a>
+  <a href="#prices" data-close-drawer>Prices</a>
+  <a href="#reviews" data-close-drawer>Reviews</a>
+  <button class="btn btn-primary btn-lg" data-open-modal data-close-drawer>Free consultation</button>
+</div>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero" data-screen-label="Hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy reveal">
+      <div class="hero-rating">
+        <span class="stars">★★★★★</span>
+        <span>4.9 / 5 · 3,200+ reviews</span>
+        <span class="pill">Trustpilot</span>
+      </div>
+      <h1 class="h-xl">Your new smile,<br><span class="serif-em">crafted in Istanbul.</span></h1>
+      <p class="lead">Premium dental care from internationally accredited clinics — for up to 70% less than the UK. We match you with the right clinic, arrange everything, and stay with you start to finish.</p>
+      <div class="hero-actions">
+        <button class="btn btn-primary btn-lg" data-open-modal>Get your free quote</button>
+        <a class="btn btn-ghost btn-lg" href="#clinics">Browse clinics</a>
+      </div>
+      <div class="hero-note">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        No obligation · Free treatment plan within 24 hours · 0% finance available
+      </div>
+    </div>
+    <div class="hero-visual reveal">
+      <span class="hero-glow" aria-hidden="true"></span>
+      <span class="hero-blob" aria-hidden="true"></span>
+      <image-slot id="hero-main" class="main-shot" shape="rounded" radius="30" placeholder="Hero — confident patient smiling / clinic"></image-slot>
+      <div class="hero-float fl-1">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21c-1.2-3.5-3.5-5-5.5-5C4 16 3 14 3 11.5 3 8 5.2 6 8 6c1.6 0 3 .8 4 2 1-1.2 2.4-2 4-2 2.8 0 5 2 5 5.5 0 2.5-1 4.5-3.5 4.5-2 0-4.3 1.5-5.5 5z" fill="currentColor"/></svg></span>
+        <span><span class="big">14,000+</span><span class="sub">smiles transformed</span></span>
+      </div>
+      <div class="hero-float fl-2">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l2.5 5 5.5.8-4 3.9 1 5.5L12 16.5 7.5 18.2l1-5.5-4-3.9L10 8z" fill="currentColor"/></svg></span>
+        <span><span class="big">Accredited</span><span class="sub">JCI &amp; ISO clinics only</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ACCREDITATION STRIP ============ -->
+<section class="accred-strip" aria-label="Accreditations and certifications">
+  <div class="wrap">
+    <span class="accred-label">Accredited &amp; certified by</span>
+    <div class="accred-marks">
+      <span>JCI</span>
+      <span>ISO 9001:2015</span>
+      <span>TÜV Rheinland</span>
+      <span>CE Marked</span>
+      <span>TDB</span>
+      <span>GDC-aligned</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRUST BAR ============ -->
+<section class="trustbar">
+  <div class="wrap">
+    <div class="trust-item"><div class="num">up to <span class="accent">70%</span></div><div class="lbl">saved vs. UK & Ireland prices</div></div>
+    <div class="trust-item"><div class="num">14,000<span class="accent">+</span></div><div class="lbl">international patients treated</div></div>
+    <div class="trust-item"><div class="num">4.9<span class="accent">★</span></div><div class="lbl">average patient rating</div></div>
+    <div class="trust-item"><div class="num">5<span class="accent">-yr</span></div><div class="lbl">guarantee on treatments</div></div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section class="section" id="how" data-screen-label="How it works">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">How it works</span>
+      <h2 class="h-lg">From first message to final smile — handled.</h2>
+      <p class="lead">You’ll have a dedicated patient coordinator from day one. Here’s the whole journey.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="n">01</div>
+        <h3>Share your case</h3>
+        <p>Send photos or X-rays — or just tell us what you’re after. It takes two minutes and costs nothing.</p>
+      </div>
+      <div class="step reveal">
+        <div class="n">02</div>
+        <h3>Get your plan</h3>
+        <p>Within 24 hours, a dentist reviews your case and sends a personalised treatment plan and fixed quote.</p>
+      </div>
+      <div class="step reveal">
+        <div class="n">03</div>
+        <h3>We arrange the trip</h3>
+        <p>Hotel, VIP airport transfers and clinic appointments — all booked and confirmed for you.</p>
+      </div>
+      <div class="step reveal">
+        <div class="n">04</div>
+        <h3>Fly home smiling</h3>
+        <p>Your treatment is completed by specialists, backed by a written multi-year guarantee.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TREATMENTS ============ -->
+<section class="section" id="treatments" style="padding-top:0" data-screen-label="Treatments">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Treatments</span>
+      <h2 class="h-lg">Specialist care across every treatment.</h2>
+      <p class="lead">Indicative starting prices — your exact quote depends on your treatment plan.</p>
+    </div>
+    <div class="treat-grid">
+      <div class="treat-card reveal">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2c2 0 3 1.5 3 4v3c0 4-1 13-3 13s-3-9-3-13V6c0-2.5 1-4 3-4z" stroke="currentColor" stroke-width="1.6"/><path d="M9 9h6" stroke="currentColor" stroke-width="1.6"/></svg></span>
+        <h3>Dental implants</h3>
+        <p>Permanent titanium replacements for missing teeth, placed by implantology specialists.</p>
+        <div class="treat-price"><span class="from">From</span><span class="amt">£480 <small>/ implant</small></span></div>
+      </div>
+      <div class="treat-card reveal">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="6" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M8 6v12M12 6v12M16 6v12" stroke="currentColor" stroke-width="1.4"/></svg></span>
+        <h3>Veneers &amp; smile makeover</h3>
+        <p>Hand-finished porcelain or E-max veneers for a natural, perfectly even smile.</p>
+        <div class="treat-price"><span class="from">From</span><span class="amt">£190 <small>/ veneer</small></span></div>
+      </div>
+      <div class="treat-card reveal">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3c4 0 7 3 7 7 0 5-4 11-7 11s-7-6-7-11c0-4 3-7 7-7z" stroke="currentColor" stroke-width="1.6"/><path d="M9 10h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+        <h3>Crowns &amp; bridges</h3>
+        <p>Zirconium crowns and bridges that restore strength and blend seamlessly.</p>
+        <div class="treat-price"><span class="from">From</span><span class="amt">£170 <small>/ crown</small></span></div>
+      </div>
+      <div class="treat-card reveal">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M12 4l1.8 4.5L18 10l-4.2 1.5L12 16l-1.8-4.5L6 10l4.2-1.5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M17 16l.9 2.2L20 19l-2.1.8L17 22l-.9-2.2L14 19l2.1-.8z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg></span>
+        <h3>Teeth whitening</h3>
+        <p>Professional in-clinic whitening for several shades brighter in a single visit.</p>
+        <div class="treat-price"><span class="from">From</span><span class="amt">£120</span></div>
+      </div>
+      <div class="treat-card reveal">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M4 14c0-3 2-5 4-5M20 14c0-3-2-5-4-5M8 9c0-2.5 1.8-4 4-4s4 1.5 4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M5 14c0 4 2 6 3 6s1-2 1.5-2 1 2 2.5 2 2-2 2.5-2 .5 2 1.5 2 3-2 3-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+        <h3>All-on-4 / All-on-6</h3>
+        <p>A full fixed arch of teeth supported by just four to six implants — in days, not months.</p>
+        <div class="treat-price"><span class="from">From</span><span class="amt">£2,950 <small>/ arch</small></span></div>
+      </div>
+      <div class="treat-card reveal">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.6"/><path d="M8 12l2.5 2.5L16 9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <h3>Full mouth restoration</h3>
+        <p>A complete, tailored rebuild combining implants, crowns and veneers for a total transformation.</p>
+        <div class="treat-price"><span class="from">From</span><span class="amt">£4,200</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICE COMPARISON ============ -->
+<section class="section prices" id="prices" data-screen-label="Price comparison">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Why it costs less</span>
+      <h2 class="h-lg">Same materials. Same standards. A fraction of the price.</h2>
+      <p class="lead">Lower clinic overheads in Turkey — not lower quality — mean dramatic savings, even with flights and a hotel included.</p>
+    </div>
+    <div class="compare">
+      <div class="compare-card home reveal">
+        <div class="tag">Typical cost · UK</div>
+        <h3>At home</h3>
+        <div class="price-row"><span>Single dental implant</span><span class="v">£2,400</span></div>
+        <div class="price-row"><span>Porcelain veneer (each)</span><span class="v">£750</span></div>
+        <div class="price-row"><span>Full smile makeover (20 units)</span><span class="v">£15,000</span></div>
+        <div class="price-row"><span>All-on-4 (per arch)</span><span class="v">£12,000</span></div>
+        <p class="compare-foot">Source: average UK private dental fees, 2025.</p>
+      </div>
+      <div class="compare-card us reveal">
+        <span class="save-badge">SAVE 70%</span>
+        <div class="tag">With Smile Atlas · Istanbul</div>
+        <h3>In Istanbul</h3>
+        <div class="price-row"><span>Single dental implant</span><span class="v">£480</span></div>
+        <div class="price-row"><span>Porcelain veneer (each)</span><span class="v">£190</span></div>
+        <div class="price-row"><span>Full smile makeover (20 units)</span><span class="v">£3,800</span></div>
+        <div class="price-row"><span>All-on-4 (per arch)</span><span class="v">£2,950</span></div>
+        <p class="compare-foot">Includes 4★ hotel + VIP transfers. Flights from £60 return.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CLINICS (centerpiece) ============ -->
+<section class="section clinics" id="clinics" data-screen-label="Clinics">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Our partner clinics</span>
+      <h2 class="h-lg">Hand-picked clinics we’d send our own family to.</h2>
+      <p class="lead">Every clinic is internationally accredited, vetted in person, and reviewed by real patients. Found one you like? Register your interest and we’ll connect you.</p>
+    </div>
+
+    <div class="clinic-filters reveal" id="clinicFilters">
+      <button class="chip active" data-filter="all">All clinics</button>
+      <button class="chip" data-filter="implants">Implants</button>
+      <button class="chip" data-filter="veneers">Veneers</button>
+      <button class="chip" data-filter="allon4">All-on-4 / 6</button>
+      <button class="chip" data-filter="cosmetic">Cosmetic</button>
+    </div>
+
+    <div class="clinic-grid" id="clinicGrid">
+
+      <!-- 1 -->
+      <article class="clinic-card reveal" data-tags="implants veneers cosmetic" data-name="Lumadent Istanbul" data-loc="Şişli, Istanbul">
+        <div class="clinic-media">
+          <image-slot id="clinic-1" placeholder="Clinic interior — Lumadent"></image-slot>
+          <div class="clinic-badges">
+            <span class="clinic-accred"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5z" stroke="currentColor" stroke-width="1.6"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>JCI</span>
+            <span class="clinic-rate"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l2.5 5 5.5.8-4 3.9 1 5.5L12 16.5 7.5 18.2l1-5.5-4-3.9L10 8z"/></svg>4.9</span>
+          </div>
+        </div>
+        <div class="clinic-body">
+          <div class="clinic-loc"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21c4-4 7-7.5 7-11a7 7 0 10-14 0c0 3.5 3 7 7 11z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="10" r="2.4" stroke="currentColor" stroke-width="1.6"/></svg>Şişli, Istanbul</div>
+          <h3>Lumadent Istanbul</h3>
+          <div class="clinic-tags"><span>Implants</span><span>Veneers</span><span>Digital dentistry</span></div>
+          <ul class="clinic-feats">
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>English-speaking specialists</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Same-day 3D digital scanning</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>5-year written guarantee</li>
+          </ul>
+          <div class="clinic-foot">
+            <span class="price"><span class="from">Implants from</span><span class="amt">£460</span></span>
+            <button class="btn btn-primary" data-open-modal>I’m interested</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2 -->
+      <article class="clinic-card reveal" data-tags="allon4 cosmetic implants" data-name="Bosphorus Dental Clinic" data-loc="Beşiktaş, Istanbul">
+        <div class="clinic-media">
+          <image-slot id="clinic-2" placeholder="Clinic interior — Bosphorus"></image-slot>
+          <div class="clinic-badges">
+            <span class="clinic-accred"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5z" stroke="currentColor" stroke-width="1.6"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>ISO 9001</span>
+            <span class="clinic-rate"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l2.5 5 5.5.8-4 3.9 1 5.5L12 16.5 7.5 18.2l1-5.5-4-3.9L10 8z"/></svg>4.8</span>
+          </div>
+        </div>
+        <div class="clinic-body">
+          <div class="clinic-loc"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21c4-4 7-7.5 7-11a7 7 0 10-14 0c0 3.5 3 7 7 11z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="10" r="2.4" stroke="currentColor" stroke-width="1.6"/></svg>Beşiktaş, Istanbul</div>
+          <h3>Bosphorus Dental Clinic</h3>
+          <div class="clinic-tags"><span>All-on-4 / 6</span><span>Smile design</span><span>Sedation</span></div>
+          <ul class="clinic-feats">
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Full-arch fixed teeth in 5 days</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>On-site dental laboratory</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Sedation &amp; anxiety care</li>
+          </ul>
+          <div class="clinic-foot">
+            <span class="price"><span class="from">All-on-4 from</span><span class="amt">£2,950</span></span>
+            <button class="btn btn-primary" data-open-modal>I’m interested</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3 -->
+      <article class="clinic-card reveal" data-tags="veneers cosmetic" data-name="Vera Smile Center" data-loc="Lara, Antalya">
+        <div class="clinic-media">
+          <image-slot id="clinic-3" placeholder="Clinic interior — Vera Smile"></image-slot>
+          <div class="clinic-badges">
+            <span class="clinic-accred"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5z" stroke="currentColor" stroke-width="1.6"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>JCI</span>
+            <span class="clinic-rate"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l2.5 5 5.5.8-4 3.9 1 5.5L12 16.5 7.5 18.2l1-5.5-4-3.9L10 8z"/></svg>4.9</span>
+          </div>
+        </div>
+        <div class="clinic-body">
+          <div class="clinic-loc"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21c4-4 7-7.5 7-11a7 7 0 10-14 0c0 3.5 3 7 7 11z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="10" r="2.4" stroke="currentColor" stroke-width="1.6"/></svg>Lara, Antalya</div>
+          <h3>Vera Smile Center</h3>
+          <div class="clinic-tags"><span>Veneers</span><span>Whitening</span><span>Hollywood smile</span></div>
+          <ul class="clinic-feats">
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Cosmetic-only specialist team</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Beachfront recovery hotel</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Digital smile preview first</li>
+          </ul>
+          <div class="clinic-foot">
+            <span class="price"><span class="from">Veneers from</span><span class="amt">£175</span></span>
+            <button class="btn btn-primary" data-open-modal>I’m interested</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4 -->
+      <article class="clinic-card reveal" data-tags="implants cosmetic" data-name="Estetik Dental Group" data-loc="Kadıköy, Istanbul">
+        <div class="clinic-media">
+          <image-slot id="clinic-4" placeholder="Clinic interior — Estetik"></image-slot>
+          <div class="clinic-badges">
+            <span class="clinic-accred"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5z" stroke="currentColor" stroke-width="1.6"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>TDB</span>
+            <span class="clinic-rate"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l2.5 5 5.5.8-4 3.9 1 5.5L12 16.5 7.5 18.2l1-5.5-4-3.9L10 8z"/></svg>4.7</span>
+          </div>
+        </div>
+        <div class="clinic-body">
+          <div class="clinic-loc"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21c4-4 7-7.5 7-11a7 7 0 10-14 0c0 3.5 3 7 7 11z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="10" r="2.4" stroke="currentColor" stroke-width="1.6"/></svg>Kadıköy, Istanbul</div>
+          <h3>Estetik Dental Group</h3>
+          <div class="clinic-tags"><span>Full mouth</span><span>Crowns</span><span>Implants</span></div>
+          <ul class="clinic-feats">
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>25 years in practice</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Complex restoration experts</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Lifetime aftercare support</li>
+          </ul>
+          <div class="clinic-foot">
+            <span class="price"><span class="from">Crowns from</span><span class="amt">£165</span></span>
+            <button class="btn btn-primary" data-open-modal>I’m interested</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5 -->
+      <article class="clinic-card reveal" data-tags="implants veneers cosmetic allon4" data-name="Pearl Dental Istanbul" data-loc="Levent, Istanbul">
+        <div class="clinic-media">
+          <image-slot id="clinic-5" placeholder="Clinic interior — Pearl Dental"></image-slot>
+          <div class="clinic-badges">
+            <span class="clinic-accred"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5z" stroke="currentColor" stroke-width="1.6"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>JCI</span>
+            <span class="clinic-rate"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l2.5 5 5.5.8-4 3.9 1 5.5L12 16.5 7.5 18.2l1-5.5-4-3.9L10 8z"/></svg>4.9</span>
+          </div>
+        </div>
+        <div class="clinic-body">
+          <div class="clinic-loc"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21c4-4 7-7.5 7-11a7 7 0 10-14 0c0 3.5 3 7 7 11z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="10" r="2.4" stroke="currentColor" stroke-width="1.6"/></svg>Levent, Istanbul</div>
+          <h3>Pearl Dental Istanbul</h3>
+          <div class="clinic-tags"><span>Cosmetic</span><span>Implants</span><span>Premium</span></div>
+          <ul class="clinic-feats">
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Flagship boutique clinic</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Private suites &amp; concierge</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>German &amp; Swiss materials only</li>
+          </ul>
+          <div class="clinic-foot">
+            <span class="price"><span class="from">Veneers from</span><span class="amt">£210</span></span>
+            <button class="btn btn-primary" data-open-modal>I’m interested</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 6 -->
+      <article class="clinic-card reveal" data-tags="implants veneers" data-name="Aegean Dental" data-loc="Alsancak, Izmir">
+        <div class="clinic-media">
+          <image-slot id="clinic-6" placeholder="Clinic interior — Aegean Dental"></image-slot>
+          <div class="clinic-badges">
+            <span class="clinic-accred"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5z" stroke="currentColor" stroke-width="1.6"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>ISO 9001</span>
+            <span class="clinic-rate"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l2.5 5 5.5.8-4 3.9 1 5.5L12 16.5 7.5 18.2l1-5.5-4-3.9L10 8z"/></svg>4.8</span>
+          </div>
+        </div>
+        <div class="clinic-body">
+          <div class="clinic-loc"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21c4-4 7-7.5 7-11a7 7 0 10-14 0c0 3.5 3 7 7 11z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="10" r="2.4" stroke="currentColor" stroke-width="1.6"/></svg>Alsancak, Izmir</div>
+          <h3>Aegean Dental</h3>
+          <div class="clinic-tags"><span>Implants</span><span>Bridges</span><span>Family-run</span></div>
+          <ul class="clinic-feats">
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Coastal city, relaxed pace</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Personal, family-run care</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Great for first-timers</li>
+          </ul>
+          <div class="clinic-foot">
+            <span class="price"><span class="from">Implants from</span><span class="amt">£440</span></span>
+            <button class="btn btn-primary" data-open-modal>I’m interested</button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+    <p class="muted reveal" id="noClinics" style="display:none; text-align:center; margin-top:30px;">No clinics match that filter yet — try another.</p>
+  </div>
+</section>
+
+<!-- ============ RESULTS / BEFORE-AFTER ============ -->
+<section class="section results" data-screen-label="Results">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Real results</span>
+      <h2 class="h-lg">Smiles we’ve helped transform.</h2>
+      <p class="lead">Genuine before-and-after results from Smile Atlas patients. Drop in your own clinic photos to personalise.</p>
+    </div>
+    <div class="ba-grid">
+      <div class="ba-card reveal">
+        <div class="ba-slider" data-ba style="--pos:50">
+          <image-slot id="ba-1b" class="ba-img" placeholder="Before"></image-slot>
+          <image-slot id="ba-1a" class="ba-img ba-after" placeholder="After"></image-slot>
+          <span class="ba-tag b">Before</span><span class="ba-tag a">After</span>
+          <div class="ba-handle"><span class="ba-grip"><svg viewBox="0 0 24 24" fill="none"><path d="M9 7l-5 5 5 5M15 7l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+        </div>
+        <p class="cap"><b>Emma, 34</b> — 16 E-max veneers · 4 days in Istanbul</p>
+      </div>
+      <div class="ba-card reveal">
+        <div class="ba-slider" data-ba style="--pos:50">
+          <image-slot id="ba-2b" class="ba-img" placeholder="Before"></image-slot>
+          <image-slot id="ba-2a" class="ba-img ba-after" placeholder="After"></image-slot>
+          <span class="ba-tag b">Before</span><span class="ba-tag a">After</span>
+          <div class="ba-handle"><span class="ba-grip"><svg viewBox="0 0 24 24" fill="none"><path d="M9 7l-5 5 5 5M15 7l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+        </div>
+        <p class="cap"><b>David, 58</b> — All-on-6 upper &amp; lower · full restoration</p>
+      </div>
+      <div class="ba-card reveal">
+        <div class="ba-slider" data-ba style="--pos:50">
+          <image-slot id="ba-3b" class="ba-img" placeholder="Before"></image-slot>
+          <image-slot id="ba-3a" class="ba-img ba-after" placeholder="After"></image-slot>
+          <span class="ba-tag b">Before</span><span class="ba-tag a">After</span>
+          <div class="ba-handle"><span class="ba-grip"><svg viewBox="0 0 24 24" fill="none"><path d="M9 7l-5 5 5 5M15 7l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+        </div>
+        <p class="cap"><b>Sophie, 41</b> — 2 implants + 10 crowns · smile makeover</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section class="section" id="reviews" data-screen-label="Reviews">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Patient stories</span>
+      <h2 class="h-lg">Trusted by thousands of patients.</h2>
+      <p class="lead">We’re rated 4.9 out of 5 across 3,200+ independent reviews.</p>
+    </div>
+    <div class="review-grid">
+      <div class="review-card reveal">
+        <div class="stars">★★★★★</div>
+        <blockquote>“I was terrified of going abroad for treatment. The coordinator answered every message, the clinic was spotless and the result is honestly better than I imagined. Wish I’d done it years ago.”</blockquote>
+        <div class="review-who">
+          <image-slot id="rev-1" shape="circle" placeholder="Photo"></image-slot>
+          <div><div class="nm">Hannah W.</div><div class="meta">Veneers · Lumadent</div></div>
+          <span class="flag">🇬🇧 Leeds, UK</span>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="stars">★★★★★</div>
+        <blockquote>“Saved over £9,000 versus my quote at home — and the care was first class. VIP transfer picked us up, hotel was lovely, and the dentist spoke perfect English.”</blockquote>
+        <div class="review-who">
+          <image-slot id="rev-2" shape="circle" placeholder="Photo"></image-slot>
+          <div><div class="nm">Mark T.</div><div class="meta">All-on-4 · Bosphorus</div></div>
+          <span class="flag">🇮🇪 Dublin, IE</span>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="stars">★★★★★</div>
+        <blockquote>“From the first photo I sent to flying home, it was four weeks. Everything was organised for me. I just turned up and smiled. Cannot recommend them enough.”</blockquote>
+        <div class="review-who">
+          <image-slot id="rev-3" shape="circle" placeholder="Photo"></image-slot>
+          <div><div class="nm">Claudia R.</div><div class="meta">Smile makeover · Pearl</div></div>
+          <span class="flag">🇩🇪 Munich, DE</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PACKAGE ============ -->
+<section class="section package" data-screen-label="Package">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">All-inclusive</span>
+      <h2 class="h-lg">One price. Everything taken care of.</h2>
+      <p class="lead">Your treatment package covers far more than the dentistry. No hidden costs, no surprises — just turn up.</p>
+    </div>
+    <div class="pkg-list reveal">
+      <div class="pkg-item">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M3 11l9-7 9 7M5 10v10h14V10M9 20v-6h6v6" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
+        <div><h4>4★ hotel stay</h4><p>Comfortable accommodation near your clinic, included for your whole stay.</p></div>
+      </div>
+      <div class="pkg-item">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M5 16l2-6h10l2 6M6 16h12v3H6zM8 19v2M16 19v2" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
+        <div><h4>VIP airport transfers</h4><p>Private door-to-door transfers between airport, hotel and clinic.</p></div>
+      </div>
+      <div class="pkg-item">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.6"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6" stroke="currentColor" stroke-width="1.6"/></svg></span>
+        <div><h4>Personal coordinator</h4><p>One dedicated contact, available throughout — before, during and after.</p></div>
+      </div>
+      <div class="pkg-item">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M5 8h14v11H5zM5 8l3-4h8l3 4M9 12h6" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
+        <div><h4>Interpreter on hand</h4><p>English-speaking support at every appointment so nothing is lost.</p></div>
+      </div>
+      <div class="pkg-item">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V6z" stroke="currentColor" stroke-width="1.6"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <div><h4>Multi-year guarantee</h4><p>Written guarantee on your treatment, honoured back home.</p></div>
+      </div>
+      <div class="pkg-item">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none"><path d="M4 6h16v12H4zM4 10h16M8 14h4" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
+        <div><h4>0% finance options</h4><p>Spread the cost with interest-free plans, subject to status.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section faq" data-screen-label="FAQ">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow center">Good to know</span>
+      <h2 class="h-lg">Questions, answered.</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <button class="faq-q">Is dental treatment in Turkey actually safe?<span class="pm"></span></button>
+        <div class="faq-a"><p>Yes. We only partner with clinics that hold international accreditations such as JCI and ISO 9001, use the same branded implants and materials as UK clinics, and are vetted in person by our team. Every treatment comes with a written multi-year guarantee.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">How much can I really save?<span class="pm"></span></button>
+        <div class="faq-a"><p>Most patients save between 50% and 70% compared with private prices at home — even after flights and a hotel are included. We’ll send you a fixed, all-in quote upfront so there are no surprises.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">How long will I need to stay?<span class="pm"></span></button>
+        <div class="faq-a"><p>It depends on your treatment. Veneers and crowns usually take 3–5 days; implants may need a short return visit a few months later. Your treatment plan will set out exactly what’s involved before you commit.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">What happens if something goes wrong after I’m home?<span class="pm"></span></button>
+        <div class="faq-a"><p>Your treatment is covered by a written guarantee, and your coordinator stays your point of contact after you return. If you ever need aftercare, we’ll help arrange it — including any necessary follow-up.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">How do I get started, and does it cost anything?<span class="pm"></span></button>
+        <div class="faq-a"><p>Just register your details or send photos — it’s completely free and there’s no obligation. A dentist reviews your case and you’ll receive a personalised plan and quote within 24 hours.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REGISTER / LEAD FORM ============ -->
+<section class="section register" id="register" data-screen-label="Register">
+  <div class="wrap">
+    <div class="register-card reveal">
+      <aside class="register-aside">
+        <span class="eyebrow">Free, no obligation</span>
+        <h2>Get your personalised treatment plan.</h2>
+        <p>Tell us a little about you and we’ll be in touch within 24 hours with a tailored plan and a fixed, all-inclusive quote.</p>
+        <ul class="aside-list">
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>A dentist reviews your case personally</li>
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Fixed quote — no hidden costs</li>
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Reply within 24 hours, guaranteed</li>
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Your details stay private &amp; secure</li>
+        </ul>
+      </aside>
+      <div class="register-form">
+        <form id="leadForm" novalidate>
+          <h3>Register your interest</h3>
+          <p class="sub">It takes under a minute. We’ll do the rest.</p>
+          <div class="hp-field" aria-hidden="true"><label>Company website</label><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
+          <div class="field-row">
+            <div class="field"><label>First name <span class="req">*</span></label><input type="text" name="firstName" autocomplete="given-name" placeholder="Jane"><span class="err">Please enter your first name.</span></div>
+            <div class="field"><label>Surname <span class="req">*</span></label><input type="text" name="lastName" autocomplete="family-name" placeholder="Doe"><span class="err">Please enter your surname.</span></div>
+          </div>
+          <div class="field"><label>Email <span class="req">*</span></label><input type="email" name="email" autocomplete="email" placeholder="jane@email.com"><span class="err">Please enter a valid email address.</span></div>
+          <div class="field"><label>Phone number <span class="req">*</span></label>
+            <div class="phone-group">
+              <select name="dialCode" aria-label="Dialling code">
+                <option value="+44">🇬🇧 +44</option>
+                <option value="+353">🇮🇪 +353</option>
+                <option value="+1">🇺🇸 +1</option>
+                <option value="+49">🇩🇪 +49</option>
+                <option value="+33">🇫🇷 +33</option>
+                <option value="+31">🇳🇱 +31</option>
+                <option value="+61">🇦🇺 +61</option>
+              </select>
+              <input type="tel" name="phone" autocomplete="tel" placeholder="7700 900000">
+            </div>
+            <span class="err">Please enter your phone number.</span>
+          </div>
+          <div class="field"><label>Treatment you’re interested in</label>
+            <select name="treatment">
+              <option value="">I’m not sure yet — advise me</option>
+              <option>Dental implants</option>
+              <option>Veneers / smile makeover</option>
+              <option>Crowns &amp; bridges</option>
+              <option>Teeth whitening</option>
+              <option>All-on-4 / All-on-6</option>
+              <option>Full mouth restoration</option>
+            </select>
+          </div>
+          <label class="consent"><input type="checkbox" name="consent"><span>I agree to be contacted about my enquiry and accept the privacy policy.</span></label>
+          <div class="form-foot">
+            <button type="submit" class="btn btn-primary btn-lg">Send my enquiry</button>
+            <span class="reassure"><svg viewBox="0 0 24 24" fill="none"><path d="M6 11V8a6 6 0 0112 0v3M5 11h14v9H5z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>Secure &amp; confidential</span>
+          </div>
+        </form>
+        <div class="form-success" id="formSuccess">
+          <div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>Thank you — we’ve got it!</h3>
+          <p id="successMsg">One of our patient coordinators will be in touch within 24 hours with your personalised plan.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <span class="brand"><span class="mark"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21c-1.2-3.5-3.5-5-5.5-5C4 16 3 14 3 11.5 3 8 5.2 6 8 6c1.6 0 3 .8 4 2 1-1.2 2.4-2 4-2 2.8 0 5 2 5 5.5 0 2.5-1 4.5-3.5 4.5-2 0-4.3 1.5-5.5 5z" fill="currentColor"/></svg></span>Smile<b>Atlas</b></span>
+        <p class="foot-about">Connecting international patients with internationally accredited dental clinics in Turkey — with everything arranged, start to finish.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <a href="#how">How it works</a>
+        <a href="#treatments">Treatments</a>
+        <a href="#clinics">Clinics</a>
+        <a href="#prices">Prices</a>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <a href="#reviews">Patient reviews</a>
+        <a href="#register">Free consultation</a>
+        <a href="#">About us</a>
+        <a href="#">Contact</a>
+      </div>
+      <div class="foot-col">
+        <h4>Get in touch</h4>
+        <a href="tel:+442045382200">+44 20 4538 2200</a>
+        <a href="mailto:hello@smileatlas.com">hello@smileatlas.com</a>
+        <a href="#">WhatsApp us</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Smile Atlas. All rights reserved.</span>
+      <span>Privacy · Terms · Cookies</span>
+    </div>
+    <p class="foot-disclaimer">Smile Atlas is a dental tourism facilitator and does not provide dental treatment directly. All treatment is carried out by independent, accredited partner clinics. Prices shown are indicative starting points and may vary depending on your individual treatment plan. This is a demonstration website; clinic names, prices and reviews are illustrative.</p>
+  </div>
+</footer>
+
+<!-- ============ MODAL ============ -->
+<div class="modal-scrim" id="modalScrim" aria-hidden="true">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-head">
+      <button class="modal-close" id="modalClose" aria-label="Close"><svg viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+      <div class="modal-clinic" id="modalClinic" style="display:none;">
+        <span class="mc-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21c-1.2-3.5-3.5-5-5.5-5C4 16 3 14 3 11.5 3 8 5.2 6 8 6c1.6 0 3 .8 4 2 1-1.2 2.4-2 4-2 2.8 0 5 2 5 5.5 0 2.5-1 4.5-3.5 4.5-2 0-4.3 1.5-5.5 5z" fill="currentColor"/></svg></span>
+        <div class="mc-text"><div class="nm" id="modalClinicName">Clinic</div><div class="lc"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21c4-4 7-7.5 7-11a7 7 0 10-14 0c0 3.5 3 7 7 11z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="10" r="2.4" stroke="currentColor" stroke-width="1.6"/></svg><span id="modalClinicLoc">Istanbul</span></div></div>
+      </div>
+      <h3 id="modalTitle">Register your interest</h3>
+      <p class="sub" id="modalSub">Leave your details and we’ll connect you with a free consultation within 24 hours.</p>
+    </div>
+    <div class="modal-body">
+      <form id="modalForm" novalidate>
+        <input type="hidden" name="clinic" id="modalClinicField">
+        <div class="hp-field" aria-hidden="true"><label>Company website</label><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
+        <div class="field-row">
+          <div class="field"><label>First name <span class="req">*</span></label><input type="text" name="firstName" autocomplete="given-name" placeholder="Jane"><span class="err">Please enter your first name.</span></div>
+          <div class="field"><label>Surname <span class="req">*</span></label><input type="text" name="lastName" autocomplete="family-name" placeholder="Doe"><span class="err">Please enter your surname.</span></div>
+        </div>
+        <div class="field"><label>Email <span class="req">*</span></label><input type="email" name="email" autocomplete="email" placeholder="jane@email.com"><span class="err">Please enter a valid email address.</span></div>
+        <div class="field"><label>Phone number <span class="req">*</span></label>
+          <div class="phone-group">
+            <select name="dialCode" aria-label="Dialling code">
+              <option value="+44">🇬🇧 +44</option>
+              <option value="+353">🇮🇪 +353</option>
+              <option value="+1">🇺🇸 +1</option>
+              <option value="+49">🇩🇪 +49</option>
+              <option value="+33">🇫🇷 +33</option>
+              <option value="+31">🇳🇱 +31</option>
+              <option value="+61">🇦🇺 +61</option>
+            </select>
+            <input type="tel" name="phone" autocomplete="tel" placeholder="7700 900000">
+          </div>
+          <span class="err">Please enter your phone number.</span>
+        </div>
+        <label class="consent"><input type="checkbox" name="consent"><span>I agree to be contacted about my enquiry and accept the privacy policy.</span></label>
+        <button type="submit" class="btn btn-primary btn-lg btn-block">Send my enquiry</button>
+        <div class="form-foot" style="justify-content:center; margin-top:16px;">
+          <span class="reassure"><svg viewBox="0 0 24 24" fill="none"><path d="M6 11V8a6 6 0 0112 0v3M5 11h14v9H5z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>Free · No obligation · Secure</span>
+        </div>
+      </form>
+      <div class="form-success" id="modalSuccess">
+        <div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Thank you!</h3>
+        <p id="modalSuccessMsg">We’ve received your details and will be in touch within 24 hours.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="image-slot.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
